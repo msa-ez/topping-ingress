@@ -1,7 +1,6 @@
 name: Ingress
 rating: 5
 imageUrl: https://github.com/msa-ez/template-axon2/assets/130956306/739c103f-f224-4ff2-bbe0-f621b7f58afb
-templateName: ingress
 description: Tool that connects entry points of pods in Kubernetes from external sources.
 depends:
 tags:
