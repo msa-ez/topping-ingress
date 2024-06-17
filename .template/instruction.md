@@ -20,7 +20,7 @@
 
 ### How to run
 
-#### 1. Execute deployment.yml.
+#### 1. Create deployment.yml.
 ```
 kubectl create -f kubernetes/template/deployment.yml
 ```
