@@ -17,3 +17,32 @@
 #### External Traffic Monitoring: It can integrate with monitoring solutions to gain insights into traffic patterns, response times, errors, etc.
 
 #### Custom Resources: Some Ingress controllers offer Custom Resource Definitions (CRDs) for more granular traffic management capabilities.
+
+### How to run
+
+#### 1. Execute deployment.yml.
+```
+kubectl create -f kubernetes/template/deployment.yml
+```
+
+#### 2. Install the Ingress Controller using Helm.
+```
+// Install Helm
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
+chmod 700 get_helm.sh
+./get_helm.sh
+
+// Configure Helm repositories
+helm repo add stable https://charts.helm.sh/stable
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+kubectl create namespace ingress-basic
+
+// Install Ingress Controller
+helm install nginx-ingress ingress-nginx/ingress-nginx --namespace=ingress-basic
+```
+
+#### 3. Verify the installation.
+```
+kubectl get all --namespace=ingress-basic
+```
